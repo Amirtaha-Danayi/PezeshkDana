@@ -1,0 +1,38 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    Medicines Detail
+{% endblock %}
+
+
+{% block content %}
+        <h1>{{medicines.generic_name}}</h1><hr>
+        <h1>{{medicines.english_name}}</h1><hr>
+        <h1>{{medicines.pronunciation}}</h1><hr>
+        <h1>{{medicines.synonyms}}</h1><hr>
+        <h1>{{medicines.other_names}}</h1><hr>
+        <h1>{{medicines.brands}}</h1><hr>
+        <h1>{{medicines.main_drug_category}}</h1><hr>
+        <h1>{{medicines.summary}}</h1><hr>
+        <h1>{{medicines.mechanism_of_action}}</h1><hr>
+        <h1>{{medicines.indications}}</h1><hr>
+        <h1>{{medicines.contraindications}}</h1><hr>
+        <h1>{{medicines.related_treatments}}</h1><hr>
+        <h1>{{medicines.related_conditions}}</h1><hr>
+        <h1>{{medicines.drug_dose}}</h1><hr>
+        <h1>{{medicines.different_dosage_forms}}</h1><hr>
+        <h1>{{medicines.food_interactions}}</h1><hr>
+        <h1>{{medicines.drug_absorption}}</h1><hr>
+        <h1>{{medicines.half_life}}</h1><hr>
+        <h1>{{medicines.toxicity}}</h1><hr>
+        <h1>{{medicines.method_of_consumption}}</h1><hr>
+        <h1>{{medicines.adverse_effects}}</h1><hr>
+        <h1>{{medicines.side_effects}}</h1><hr>
+        <h1>{{medicines.symptoms_of_excessive_consumption}}</h1><hr>
+        <h1>{{medicines.warnings}}</h1><hr>
+        <img src="{{medicines.gallery.url}}" class="w-full" alt="{{medicines.title}}">
+        <h1>{{medicines.references}}</h1><hr>
+    <a href="{% url 'medicines_update' medicines.id %}">ویرایش دارو</a>
+    <span>|</span>
+    <a href="{% url 'medicines_delete' medicines.id %}">حدف دارو</a>
+{% endblock %}

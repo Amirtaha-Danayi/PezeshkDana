@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    Experiments List
+{% endblock %}
+
+
+{% block content %}
+        {% for experiments in experiments %}
+        <a href="{% url 'experiments_detail' experiments.id %}"><h1>{{experiments.name}}<h1><br></a>
+        <h4>{{experiments.english_name}}</h4>
+        <hr>
+
+
+    {% endfor %}
+{% endblock %}

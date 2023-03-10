@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block title %}
+symptoms list
+{% endblock %}
+
+{% block content %}
+    {% for symptoms in symptoms %}
+        <a href="{% url 'symptoms_detail' symptoms.id %}"><h1>{{symptoms.title}}<h1><br></a>
+        <h4>{{symptoms.english_title}}</h4>
+        <hr>
+
+
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+    حذف آزمایش
+{% endblock %}
+
+{% block content %}
+<h1>ایا از حذف آزمایش مطمينید؟</h1>
+    <form action="" method="post">
+    {% csrf_token %}
+        <input type="submit" value="حذف" class="btn btn-danger">
+    </form>
+      <a href="{% url 'experiments_list' %}">
+       <input type="submit" value="خیر" class="btn btn-danger">
+
+    </a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+    Medicines List
+{% endblock %}
+
+{% block content %}
+    {% for medicines in medicines %}
+        <a href="{% url 'medicines_detail' medicines.id %}"><h1>{{medicines.title}}<h1><br></a>
+        <h4>{{medicines.english_title}}</h4>
+        <hr>
+
+
+    {% endfor %}
+
+{% endblock %}

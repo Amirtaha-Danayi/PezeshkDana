@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    Sickness List
+{% endblock %}
+
+{% block content %}
+    {% for sickness in sickness %}
+        <a href="{% url 'sickness_detail' sickness.id %}"><h1>{{sickness.title}}<h1><br></a>
+            <h4>{{sickness.english_title}}</h4>
+            <hr>
+    {% endfor %}
+{% endblock content %}
+

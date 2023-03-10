@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+   {% block title %}
+        ویرایش علایم {{ sickness.title }}
+    {% endblock %}
+
+{% block content %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="ذخیره">
+    </form>
+{% endblock %}
