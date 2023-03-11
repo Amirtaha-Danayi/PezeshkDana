@@ -5,19 +5,22 @@
 {% endblock %}
 
 {% block content %}
-        <h1>{{symptoms.definition}}</h1><hr>
-        <h1>{{symptoms.classification}}</h1><hr>
-        <h1>{{symptoms.mechanism}}</h1><hr>
-        <h1>{{symptoms.pathophysiology}}</h1><hr>
-        <h1>{{symptoms.related}}</h1><hr>
-        <h1>{{symptoms.diagnostic_value}}</h1><hr>
-        <h1>{{symptoms.clinical_features}}</h1><hr>
-        <h1>{{symptoms.diagnosis}}</h1><hr>
-        <h1>{{symptoms.epidemiology}}</h1><hr>
-        <h1>{{symptoms.management}}</h1><hr>
-        <h1>{{symptoms.etiology}}</h1><hr>
-        <h1>{{symptoms.cause}}</h1><hr>
+        <h1>{{symptoms.definition|safe}}</h1><hr>
+        <h1>{{symptoms.classification|safe}}</h1><hr>
+        <h1>{{symptoms.mechanism|safe}}</h1><hr>
+        <h1>{{symptoms.pathophysiology|safe}}</h1><hr>
+        <h1>{{symptoms.related|safe}}</h1><hr>
+        <h1>{{symptoms.diagnostic_value|safe}}</h1><hr>
+        <h1>{{symptoms.clinical_features|safe}}</h1><hr>
+        <h1>{{symptoms.diagnosis|safe}}</h1><hr>
+        <h1>{{symptoms.epidemiology|safe}}</h1><hr>
+        <h1>{{symptoms.management|safe}}</h1><hr>
+        <h1>{{symptoms.etiology|safe}}</h1><hr>
+        <h1>{{symptoms.cause|safe}}</h1><hr>
+        {% if symptoms.gallery %}
         <img src="{{symptoms.gallery.url}}" class="w-full" alt="{{symptoms.title}}">
+        
+        {% endif %}
         <a href="{% url 'symptoms_update' symptoms.id %}">وبرایش علابم</a>
         <span>|</span>
     <a href="{% url 'symptoms_delete' symptoms.id %}">حذف علایم</a>

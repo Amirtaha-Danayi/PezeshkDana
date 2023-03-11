@@ -9,25 +9,25 @@
 
 {% block content %}
     <div class="conteiner">
-        <h1>{{sickness.summary}}</h1><hr>
-        <h1>{{sickness.classification}}</h1><hr>
-        <h1>{{sickness.definition}}</h1><hr>
-        <h1>{{sickness.pathophysiology}}</h1><hr>
-        <h1>{{sickness.differential_diagnoses}}</h1><hr>
-        <h1>{{sickness.clinical_features}}</h1><hr>
-        <h1>{{sickness.epidemiology}}</h1><hr>
-        <h1>{{sickness.etiology}}</h1><hr>
-        <h1>{{sickness.diagnosis}}</h1><hr>
-        <h1>{{sickness.management}}</h1><hr>
-        <h1>{{sickness.treatment}}</h1><hr>
-        <h1>{{sickness.risk_factors}}</h1><hr>
-        <h1>{{sickness.complications}}</h1><hr>
-        <h1>{{sickness.prognosis}}</h1><hr>
-        <h1>{{sickness.other_names}}</h1><hr>
-        <h1>{{sickness.references}}</h1><hr>
+        <h1>{{sickness.summary|safe}}</h1><hr>
+        <h1>{{sickness.classification|safe}}</h1><hr>
+        <h1>{{sickness.definition|safe}}</h1><hr>
+        <h1>{{sickness.pathophysiology|safe}}</h1><hr>
+        <h1>{{sickness.differential_diagnoses|safe}}</h1><hr>
+        <h1>{{sickness.clinical_features|safe}}</h1><hr>
+        <h1>{{sickness.epidemiology|safe}}</h1><hr>
+        <h1>{{sickness.etiology|safe}}</h1><hr>
+        <h1>{{sickness.diagnosis|safe}}</h1><hr>
+        <h1>{{sickness.management|safe}}</h1><hr>
+        <h1>{{sickness.treatment|safe}}</h1><hr>
+        <h1>{{sickness.risk_factors|safe}}</h1><hr>
+        <h1>{{sickness.complications|safe}}</h1><hr>
+        <h1>{{sickness.prognosis|safe}}</h1><hr>
+        <h1>{{sickness.other_names|safe}}</h1><hr>
+        <h1>{{sickness.references|safe}}</h1><hr>
         {% if sickness.gallery %}
             <img src="{{sickness.gallery.url}}" class="w-full" alt="{{sickness.title}}">
-             {% else %}
+        {% else %}
         <img src="{% static 'image/nocver.jpeg' %}" class="w-full" alt="{{experiments.title}}">
         {% endif %}
     </div>

@@ -67,7 +67,7 @@ li.dropdown {
     <div class="dropdown-content">
       <a href="{% url 'sickness_create' %}">فرم ثبت بیماری</a>
       <a href="{% url 'symptoms_crete' %}">فرم ثبت علایم</a>
-      <a href="#">فرم شرح حال</a>
+      <a href="{% url 'create_explanation' %}">فرم شرح حال</a>
       <a href="{% url 'medicines_create' %}">فرم ثبت داروها</a>
       <a href="{% url 'experiments_create' %}">فرم ثبت آزمایش</a>
     </div>
@@ -76,6 +76,7 @@ li.dropdown {
   <li><a href="{% url 'symptoms_list' %}">علایم</a></li>
   <li><a href="{% url 'experiments_list' %}">آزمایشات</a></li>
   <li><a href="{% url 'medicines_list' %}">دارو‌ها</a></li>
+    <li><a href="{% url 'explanation_list' %}">شرح حال</a></li>
 </ul>
 {% block content %}
 

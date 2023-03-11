@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends '_base.html' %}
+
+
+{% block title %}
+    explanation list
+{% endblock %}
+
+
+{% block content %}
+    {% for explanation in explanation %}
+       <h1> <a href="{% url 'explanation_detail' explanation.id %}">{{ explanation.title }}</a></h1>
+        {{ explanation.english_title }}
+    {% endfor %}
+
+{% endblock %}

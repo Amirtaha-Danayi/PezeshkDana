@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Symptoms
 from django.urls import reverse_lazy
+from .forms import SymptomsForm
 
 class SymptomsList(generic.ListView):
     model = Symptoms
@@ -14,10 +15,18 @@ class SymptomsDetail(generic.DetailView):
     template_name = 'symptoms/symptoms_dtail.html'
 
 
-class SymptomsCreate(generic.CreateView):
-    model = Symptoms
-    fields = ['title', 'english_title', 'definition', 'classification', 'mechanism', 'pathophysiology', 'related', 'diagnostic_value', 'clinical_features', 'diagnosis', 'epidemiology', 'management', 'etiology', 'cause', 'gallery']
-    template_name = 'symptoms/symptoms_crete.html'
+def create_symptoms(request):
+
+    form = None
+    if request.method == "POST":
+        form = SymptomsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'symptoms/symptoms_list.html')
+    else:
+
+        form = SymptomsForm()
+    return render(request, 'symptoms/symptoms_crete.html',{'form':form})
 
 
 class SymptomsUpdate(generic.UpdateView):

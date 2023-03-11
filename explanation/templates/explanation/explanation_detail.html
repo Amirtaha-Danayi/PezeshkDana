@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends '_base.html' %}
+
+{% block title %}
+    جزیات شرح‌حال
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        {{ explanation.title }}
+        {{ explanation.english_title }}
+        {{ explanation.scenario|safe }}
+
+        {{ explanation.mainـcomplaintـPersian|safe }}
+        {{ explanation.mainـcomplaintـenglish|safe }}
+        {{ explanation.onset|safe }}
+        {{ explanation.location|safe }}
+        {{ explanation.radiation|safe }}
+        {{ explanation.duration|safe }}
+        {{ explanation.character|safe }}
+        {{ explanation.associated|safe }}
+        {{ explanation.symptom|safe }}
+        {{ explanation.exacerbating_and_alleviating|safe }}
+        {{ explanation.factors|safe }}
+        {{ explanation.temporal|safe }}
+        {{ explanation.patterns|safe }}
+        {{  explanation.severity|safe }}
+        {{ explanation.other_details|safe }}
+        {{ explanation.past_medical_history|safe }}
+        {{ explanation.medication_history|safe }}
+        {{ explanation.family_history|safe }}
+        {{  explanation.social_history|safe }}
+        {{ explanation.constitutional|safe }}
+        {{ explanation.HENT|safe }}
+        {{ explanation.integumentary|safe }}
+        {{ explanation.cardiovascular|safe }}
+        {{ explanation.gastrointestinal|safe }}
+        {{ explanation.genitourinary|safe }}
+        {{ explanation.endocrine|safe }}
+
+        {{ explanation.hematology_Oncology|safe }}
+        {{ explanation.neurologic|safe }}
+        {{ explanation.respiratory|safe }}
+        {{ explanation.related_disease|safe }}
+        {{ explanation.related_symptoms|safe }}
+    </div>
+{% endblock content %}

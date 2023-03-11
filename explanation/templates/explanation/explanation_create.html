@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends '_base.html' %}
+
+{% block title %}
+    ایجاد شرح حال
+{% endblock %}
+
+{% block content %}
+
+
+    <form method="post">
+        {% csrf_token %}
+        <table>
+    <div class="form-outline">
+        {{form.as_table}}
+        <br>
+    </div>
+    <!--Blog Text Area-->
+        {{form.media}}
+        </table>
+        <input type="submit">
+    </form>
+
+{% endblock %}

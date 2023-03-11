@@ -6,21 +6,21 @@ Experiments Detail
 {% endblock %}
 
 {% block content %}
-    <h1>{{experiments.natural_range}}</h1><hr>
-        <h1>{{experiments.physiopathology}}</h1><hr>
-        <h1>{{experiments.reasons_for}}</h1><hr>
-        <h1>{{experiments.change}}</h1><hr>
-        <h1>{{experiments.interpretation}}</h1><hr>
-        <h1>{{experiments.quick_interpretation}}</h1><hr>
-        <h1>{{experiments.differential_diagnoses}}</h1><hr>
-        <h1>{{experiments.false_results}}</h1><hr>
+    {{experiments.natural_range|safe}}<hr>
+        {{experiments.physiopathology|safe}}<hr>
+        {{experiments.reasons_for|safe}}<hr>
+        {{experiments.change|safe}}<hr>
+        {{experiments.interpretation|safe}}<hr>
+        {{experiments.quick_interpretation|safe}}<hr>
+        {{experiments.differential_diagnoses|safe}}<hr>
+        {{experiments.false_results|safe}}<hr>
     {% if experiments.gallery %}
         <img src="{{experiments.gallery.url}}" class="w-full" alt="{{experiments.title}}">
         {% else %}
         <img src="{% static 'image/nocver.jpeg' %}" class="w-full" alt="{{experiments.title}}">
 
     {% endif %}
-        <h1>{{experiments.references}}</h1><hr>
+        {{experiments.references|safe}}<hr>
     <a href="{% url 'experiments_update' experiments.id %}">ویرایش ازمایشات</a>
     <span>|</span>
     <a href="{% url 'experiments_delete' experiments.id %}">حذف آزمایش</a>

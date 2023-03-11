@@ -1,15 +1,23 @@
 {% extends '_base.html' %}
 
 {% block title %}
-Experiments Create
+    ایجاد آزمایش
 {% endblock %}
 
 {% block content %}
-        <form action="" method="POST" enctype="multipart/form-data">
+
+
+    <form method="post">
         {% csrf_token %}
         <table>
-            {{form.as_table}}
+    <div class="form-outline">
+        {{form.as_table}}
+        <br>
+    </div>
+    <!--Blog Text Area-->
+        {{form.media}}
         </table>
-        <input type="submit" value="ذخیره">
+        <input type="submit">
     </form>
+
 {% endblock %}
