@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="{% static 'css/s' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <title>{% block title %}
 
 {% endblock %}</title>
@@ -62,6 +63,10 @@ li.dropdown {
 <body>
 
 <ul>
+
+
+
+{% if user.is_authenticated %}
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
     <div class="dropdown-content">
@@ -71,12 +76,19 @@ li.dropdown {
       <a href="{% url 'medicines_create' %}">فرم ثبت داروها</a>
       <a href="{% url 'experiments_create' %}">فرم ثبت آزمایش</a>
     </div>
+{% endif %}
   </li>
   <li><a class="active" href="{% url 'sickness_list' %}">بیماری‌ها</a></li>
   <li><a href="{% url 'symptoms_list' %}">علایم</a></li>
   <li><a href="{% url 'experiments_list' %}">آزمایشات</a></li>
   <li><a href="{% url 'medicines_list' %}">دارو‌ها</a></li>
     <li><a href="{% url 'explanation_list' %}">شرح حال</a></li>
+    {% if user.is_authenticated %}
+        <li>خوش‌آمدی {{ user.username }}</li>
+        <li><a href="{% url 'logout' %}"> logout </a></li>
+     {% else %}
+        <li><a href="{% url 'login' %}">Login</a></li>
+     {% endif %}
 </ul>
 {% block content %}
 
@@ -84,7 +96,6 @@ li.dropdown {
 
 </body>
 
-<!-- Mirrored from www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar2 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Sep 2022 14:29:58 GMT -->
 </html>
 
 

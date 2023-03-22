@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     login
@@ -6,9 +7,25 @@
 
 
 {% block content %}
-    <form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-    </form>
+
+
+<div class="d-flex justify-content-center mt-3 dir='ltr'">
+    <div class="col-3 bg-white m-3 m-sm5 border rounded px-4 pt-4 pb-3 shadow">
+        <form method="post">
+        {% csrf_token %}
+        <h3 class="text-center">Login Page</h3>
+        {{ form }}
+        <div class="d-flex justify-content-between align-item-center">
+        </div>
+        <button type="submit" class="btn btn-success mt-3 w-100">ورود</button>
+        <div class="line-with-middle-set mt-2 text-center">
+            <span>یا</span>
+        </div>
+        <a href="" class="btn btn-primary mt-2 mb-3 w-100">ثبت‌نام</a>
+        </form>
+        <div class="mt-1 text-center">
+            <a class="text-decoration-none" href="">فراموشی رمز عبور</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

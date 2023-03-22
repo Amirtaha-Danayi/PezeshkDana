@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'ckeditor',
     'sickness',
     'symptoms',
@@ -133,12 +134,25 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# to user ckeditor
 STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
 
 
+
+# using this two line to use media folder
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+# if user logged in show the home page
+LOGIN_REDIRECT_URL = 'show_home'
 
-LOGIN_REDIRECT_URL = 'sickness_list'
+
+
+# if user logged out show the home page
+LOGOUT_REDIRECT_URL = 'show_home'
+
+
+# if we want to use crispy forms we should add this line to our project
+CRISPY_TEMPLATE_PACK = 'bootstrap 5'
 
